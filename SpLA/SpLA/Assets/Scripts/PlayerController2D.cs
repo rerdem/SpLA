@@ -11,6 +11,7 @@ public class PlayerController2D : MonoBehaviour {
 
 	private Animator animator;
 	private Rigidbody2D rigid;
+	private SpriteRenderer render;
 
 	bool grounded = false;
 	public Transform groundCheck;
@@ -22,6 +23,7 @@ public class PlayerController2D : MonoBehaviour {
 	void Start () {
 		animator = GetComponent<Animator>();
 		rigid = GetComponent<Rigidbody2D>();
+		render = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -68,9 +70,7 @@ public class PlayerController2D : MonoBehaviour {
 
 	void flip() {
 		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+		render.flipX = !render.flipX;
 	}
 
 }
