@@ -15,6 +15,7 @@ TagManager:
   - 
   - Player
   - Platforms
+  - BG_details
   - Background
   - 
   - 
@@ -36,9 +37,14 @@ TagManager:
   - 
   - 
   - 
-  - 
   m_SortingLayers:
-  - name: Doors_Signs
+  - name: Background
+    uniqueID: 2690458359
+    locked: 0
+  - name: BG_details
+    uniqueID: 3947163453
+    locked: 0
+  - name: items_decorations
     uniqueID: 35259027
     locked: 0
   - name: Default
