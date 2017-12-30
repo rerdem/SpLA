@@ -47,6 +47,9 @@ TagManager:
   - name: items_decorations
     uniqueID: 35259027
     locked: 0
+  - name: enemies
+    uniqueID: 193918127
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

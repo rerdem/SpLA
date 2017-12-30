@@ -23,6 +23,9 @@ public class LevelGenerator : MonoBehaviour {
 	public GameObject goalCenter;
 	public GameObject[] decorations;
 	public GameObject[] clouds;
+	public GameObject bee;
+	public GameObject slime;
+	public GameObject snake;
 
 	[Header("Generation Parameters")]
 	public int minPlatformSize = 2;
@@ -43,6 +46,8 @@ public class LevelGenerator : MonoBehaviour {
 	public float cloudChance = 0.5f;
 	[Range (0.0f, 1.0f)]
 	public float tileChange = 0.7f;
+	[Range (0.0f, 1.0f)]
+	public float enemyDensity = 0.1f;
 
 	private int blockNum = 1;
 	private int blockHeight = 0;
@@ -111,6 +116,18 @@ public class LevelGenerator : MonoBehaviour {
 								Instantiate(decorations[Mathf.RoundToInt(Random.Range(0,decorations.Length))], new Vector2 (blockNum * 0.7f, blockHeight + 0.7f), Quaternion.identity);
 							}
 
+							//place enemies
+							if (Random.value < enemyDensity) {
+								switch (Mathf.RoundToInt(Random.Range(0, 3))) {
+									case 0: Instantiate(bee, new Vector2 (blockNum * 0.7f, blockHeight + 2f), Quaternion.identity);
+										break;
+									case 1: Instantiate(slime, new Vector2 (blockNum * 0.7f, blockHeight + 0.7f), Quaternion.identity);
+										break;
+									default: Instantiate(snake, new Vector2 (blockNum * 0.7f, blockHeight + 1f), Quaternion.identity);
+										break;
+								}
+							}
+
 							//fill below
 							for (int k = 1; k < groundFillDepth; k++) {
 								Instantiate(grassCenter, new Vector2 (blockNum * 0.7f, (blockHeight - (0.7f * k))), Quaternion.identity);
@@ -133,6 +150,18 @@ public class LevelGenerator : MonoBehaviour {
 							//place decoration
 							if (Random.value < decorationChance) {
 								Instantiate(decorations[Mathf.RoundToInt(Random.Range(0,decorations.Length))], new Vector2 (blockNum * 0.7f, blockHeight + 0.7f), Quaternion.identity);
+							}
+
+							//place enemies
+							if (Random.value < enemyDensity) {
+								switch (Mathf.RoundToInt(Random.Range(0, 3))) {
+								case 0: Instantiate(bee, new Vector2 (blockNum * 0.7f, blockHeight + 2f), Quaternion.identity);
+									break;
+								case 1: Instantiate(slime, new Vector2 (blockNum * 0.7f, blockHeight + 0.7f), Quaternion.identity);
+									break;
+								default: Instantiate(snake, new Vector2 (blockNum * 0.7f, blockHeight + 1f), Quaternion.identity);
+									break;
+								}
 							}
 
 							//fill below
