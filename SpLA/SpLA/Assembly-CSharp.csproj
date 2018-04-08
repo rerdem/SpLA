@@ -53,6 +53,13 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BeeAI.cs" />
      <Compile Include="Assets\Scripts\DamagePlayer.cs" />
+     <Compile Include="Assets\Scripts\DataAnswer.cs" />
+     <Compile Include="Assets\Scripts\DataController.cs" />
+     <Compile Include="Assets\Scripts\DataGame.cs" />
+     <Compile Include="Assets\Scripts\DataLecture.cs" />
+     <Compile Include="Assets\Scripts\DataQuestion.cs" />
+     <Compile Include="Assets\Scripts\DataWord.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\LevelGenerator.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\PlayerController2D.cs" />
