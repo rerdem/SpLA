@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager gm = null;
 
+	public DataController dc;
+
 	void Awake() {
 		if (gm == null)
 			gm = this;
@@ -25,5 +27,7 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
-
+	public void initiateLoadingGameData(string filename) {
+		dc.loadGameData(filename + ".json");
+	}
 }

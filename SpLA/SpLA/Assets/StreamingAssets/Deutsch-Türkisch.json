@@ -1,0 +1,252 @@
+{
+    "teachinglanguage": "German",
+    "learninglanguage": "Turkish",
+    "intro": "storyintroblablablablabla",
+    "allLectures": [
+        {
+            "title": "Begrüßungen",
+            "grammar": "<i>İyi günler</i> 'Guten Tag' kann den ganzen Tag über und auch als Abschiedsgruß im Sinne von 'Einen schönen Tag noch' verwendet werden. <i>Merhaba</i> kann auch den ganzen Tag über verwendet werden und entspricht etwa [dem deutschen] 'Grüß Sie/dich'. Im Internet wird es auch für 'Hallo' verwendet. *Günaydın* wird in den Morgen- und frühen Vormittagsstunden verwendet. <i>İyi akşamlar</i> 'Guten Abend' sagt man in den Abendstunden und <i>İyi geceler</i> 'Gute Nacht' zu später Stunde oder beim Zubettgehen; beides kann auch als Abschiedsgruß verwendet werden.<br><br>Das Türkische kennt kein Verb 'heißen'. Die Übersetzung der Fragen <i>Adınız ne?</i> und <i>Adın ne?</i> lautet 'Wie ist Ihr Name?' bzw. 'Wie ist dein Name?' (<i>wörtl.:</i> Ihr Name was? bzw. Dein Name was?). Somit kann auch [das deutsche] 'Wie heißen Sie?/Wie heißt du?' nur in dieser Variante wiedergegeben werden. In beiden Fällen enthält das Word <i>ad</i> 'Name' je ein Suffix, das 'Ihr' bzw. 'dein' bedeutet [...]. Es gibt aber auch [selbstständige] Wörter für 'Ihr' und 'dein'; sie lauten <i>sizin</i> bzw. <i>senin</i>. Diese <b>können</b> zur besonderen Hervorhebung (Betonung) gebraucht werden. Sie <b>müssen</b> gebraucht werden, wenn der Sprecher einen Kontrast herstellt, also von einer Person zur anderen wechselt: <i>Benim adım Sara. Senin adın ne?</i> 'Mein Name ist Sara. Und wie ist dein Name?'.<br><br>Das Türkische kommt in der Gegenwart ohne Hilfsverb 'sein' aus. Es gibt aber Endungen, die die jeweilige Person anzeigen [...]. In der 3. Person benötigt Türkisch auch keine personenanzeigende Endung. <i>Adım Sara</i> bedeutet wörtlich 'Mein Name Sara'.",
+            "vocabulary": [
+                {
+                    "word": "ad",
+                    "translation": "Name"
+                },
+                {
+                    "word": "benim (ben)",
+                    "translation": "mein (ich)"
+                },
+                {
+                    "word": "günaydın",
+                    "translation": "Guten Morgen"
+                },
+                {
+                    "word": "iyi",
+                    "translation": "gut"
+                },
+                {
+                    "word": "iyi günler",
+                    "translation": "Guten Tag"
+                },
+                {
+                    "word": "iyi akşamlar",
+                    "translation": "Guten Abend"
+                },
+                {
+                    "word": "iyi geceler",
+                    "translation": "Gute Nacht"
+                },
+                {
+                    "word": "merhaba",
+                    "translation": "Grüße Sie/dich"
+                },
+                {
+                    "word": "... ne?",
+                    "translation": "Was?"
+                },
+                {
+                    "word": "senin (sen)",
+                    "translation": "dein (du)"
+                }
+            ],
+            "exercises": [
+                {
+                    "type": "MC",
+                    "questionText": "Finde die richtige Antwort: İyi akşamlar, senin adın ne?",
+                    "answers": [
+                        {
+                            "answerText": "Günaydın, ben Hans.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "İyi akşamlar, benim adım Peter.",
+                            "isCorrect": true,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "İyi akşamlar, senin adın ne?",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Merhaba, iyi akşamlar.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "MP",
+                    "questionText": "Klicke die Übersetzungen in der richtigen Reihenfolge an: Günaydın! İyi günler! İyi akşamlar! İyi geceler!",
+                    "answers": [
+                        {
+                            "answerText": "Guten Tag!",
+                            "isCorrect": false,
+                            "queuePos": 1
+                        },
+                        {
+                            "answerText": "Guten Abend!",
+                            "isCorrect": false,
+                            "queuePos": 2
+                        },
+                        {
+                            "answerText": "Gute Nacht!",
+                            "isCorrect": false,
+                            "queuePos": 3
+                        },
+                        {
+                            "answerText": "Guten Morgen!",
+                            "isCorrect": false,
+                            "queuePos": 4
+                        }
+                    ]
+                },
+                {
+                    "type": "TF",
+                    "questionText": "Ist dieser Satz korrekt? Günaydın, adım Martin.",
+                    "answers": [
+                        {
+                            "answerText": "Richtig.",
+                            "isCorrect": true,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Falsch.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Vokalharmonie und der Plural",
+            "grammar": "Das Türkische hat acht Vokale: <i>a, e, i, ı, o, ö, u, ü</i>. Davon werden vier Vokale im Mund <b>vorn</b> artikuliert (das sind die <b>hellen</b> Vokale: <i>e, i, ö, ü</i>) und vier <b>hinten</b> (das sind die <b>dunklen</b> Vokale: <i>a, ı, o, u</i>). In der Regel enthält ein Wort nur helle oder nur dunkle Vokale. Entsprechend muss beim Anhängen von Suffixen der verbindende Vokal mit dem letzten Vokal des Wortstamms harmonieren. Hier gibt es die vierförmige und die zweiförmige Vokalharmonie. Bei der vierförmigen Vokalharmonie wird bei <i>e, i</i> ein <i>i</i> verwendet, bei <i>ö, ü</i> ein <i>ü</i>, bei <i>a, ı</i> ein <i>ı</i> und bei <i>o, u</i> ein <i>u</i>. Bei der zweiförmigen Vokalharmonie wird bei <i>e, i, ö, ü</i> ein <i>e</i> verwendet und bei <i>a, ı, o, u</i> ein <i>a</i>. Welche Vokalharmonie verwendet wird, hängt vom jeweiligen Suffix ab. Für die Bildung des Plurals wird die zweiförmige Vokalharmonie verwendet.<br><br>Das Pluralsuffix lautet <i>-ler</i> oder <i>-lar</i> und wird betont. Ist der letzte Vokal eines Wortes <i>e</i>, <i>i</i>, <i>ö</i> oder <i>ü</i>, wird die Endung <i>-ler</i> verwendet. Ist der letzte Vokal eines Wortes <i>a</i>, <i>ı</i>, <i>o</i> oder <i>u</i>, wird die Endung <i>-lar</i> verwendet.<br><br>Die Verwendung des Pluralsuffixes weicht in manchen Bereichen vom Deutschen ab. Türkische Substantive im Singular (Ausnahme: Eigennamen) stehen für die ganze Klasse und sagen nichts über die Menge oder die Anzahl aus. Bei deutschen Stoffnamen wie 'Wasser, Mehl, Gold' wird auch nichts über die Menge mitgeteilt.<br><br>Bei einer Frage wie <i>Bunlar ne?</i> 'Was sind das/diese?' (<i>wörtl.:</i> Diese was?) weist der Sprecher mittles <i>bunlar</i> auf eine Mehrheit hin. Aber er erfragt eine Klassenzugehörigkeit. Somit reicht es, statt 'Zeitungen' nur mit 'Zeitung' zu antworten. Die Antwort <i>gazete</i> besagt, dass es sich um die Klasse 'Zeitung' und nicht z.B. um die Klasse 'Zeitschrift' handelt.<br><br>Bei der Frage <i>Bu gazeteler Türkçe mi?</i> geht es dem Sprecher nicht um die Klasse[...]. Es möchte vielmehr wissen, ob die vor ihm liegenden Exemplare auf Türkisch sind - das können zwei oder mehr sein. Nun muss er das Pluralsuffix einsetzen, weil er über spezielle Einzelexemplare spricht.<br><br>Ein Demonstrativpronomen vor einem Substantiv im Plural steht im Türkischen im Singular. Nähere Bestimungen zu einem Substantiv stehen <b>unverändert<b> davor. Vergleichen wir:<br>Bu kitap Türkçe. -> Dieses Buch ist auf Türkisch.<br>Bu Türkçe. -> Dieses ist auf Türkisch.<br>Bu kitaplar Türkçe. -> Diese Bücher sind auf Türkisch. <b>Aber:</b><br>Bunlar Türkçe. -> Diese sind auf Türkisch.",
+            "vocabulary": [
+                {
+                    "word": "adam",
+                    "translation": "Mann"
+                },
+                {
+                    "word": "bu",
+                    "translation": "Dieser/diese/dieses"
+                },
+                {
+                    "word": "ekmek",
+                    "translation": "Brot"
+                },
+                {
+                    "word": "eski",
+                    "translation": "alt"
+                },
+                {
+                    "word": "evet",
+                    "translation": "ja"
+                },
+                {
+                    "word": "gazete",
+                    "translation": "Zeitung"
+                },
+                {
+                    "word": "hanım",
+                    "translation": "Frau/Dame"
+                },
+                {
+                    "word": "hayır",
+                    "translation": "nein"
+                },
+                {
+                    "word": "... mi?",
+                    "translation": "(Fragepartikel)"
+                },
+                {
+                    "word": "şoför",
+                    "translation": "Chauffeur"
+                },
+                {
+                    "word": "taze",
+                    "translation": "frisch"
+                },
+                {
+                    "word": "turist",
+                    "translation": "Tourist"
+                },
+                {
+                    "word": "yemek",
+                    "translation": "Essen/Mahlzeit"
+                }
+            ],
+            "exercises": [
+                {
+                    "type": "MC",
+                    "questionText": "Finde die richtige Antwort: Bu hanımlar turist mi?",
+                    "answers": [
+                        {
+                            "answerText": "Bu turist.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Evet, bu hanım turist.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Evet, bunlar turist.",
+                            "isCorrect": true,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Hayır, bu turist.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "MP",
+                    "questionText": "Klicke die Pluralendungen in der richtigen Reihenfolge an: Yemek, Şoför, Adam, Hanım",
+                    "answers": [
+                        {
+                            "answerText": "-ler",
+                            "isCorrect": false,
+                            "queuePos": 1
+                        },
+                        {
+                            "answerText": "-ler",
+                            "isCorrect": false,
+                            "queuePos": 2
+                        },
+                        {
+                            "answerText": "-lar",
+                            "isCorrect": false,
+                            "queuePos": 3
+                        },
+                        {
+                            "answerText": "-lar",
+                            "isCorrect": false,
+                            "queuePos": 4
+                        }
+                    ]
+                },
+                {
+                    "type": "TF",
+                    "questionText": "Ist dieser Satz korrekt? Bu gazetelar eski.",
+                    "answers": [
+                        {
+                            "answerText": "Richtig.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Falsch.",
+                            "isCorrect": true,
+                            "queuePos": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "outro": "storyoutroblablablablabla"
+}

@@ -13,11 +13,11 @@ public class DataController : MonoBehaviour {
 
 	//public DataGame gameData;
 
-	private string gameDataFileName = "data.json";
+	//public string gameDataFileName = "data.json";
 
 	void Start() {
 		DontDestroyOnLoad(gameObject);
-		LoadGameData();
+		//LoadGameData();
 	}
 		
 //	public void SaveGameData() {
@@ -28,13 +28,13 @@ public class DataController : MonoBehaviour {
 //		File.WriteAllText(filePath, contents);
 //	}
 
-	private void LoadGameData() {
+	public void loadGameData(string gameDataFileName) {
 		string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
 
 		if (File.Exists(filePath)) {
 			string dataAsJson = File.ReadAllText(filePath);
 
-			Debug.Log(dataAsJson);
+			//Debug.Log(dataAsJson);
 
 			DataGame loadedData = JsonUtility.FromJson<DataGame>(dataAsJson);
 
@@ -50,6 +50,6 @@ public class DataController : MonoBehaviour {
 	}
 
 	public DataLecture GetLectureData(int lectureID) {
-		return allLectures [lectureID];
+		return allLectures[lectureID];
 	}
 }
