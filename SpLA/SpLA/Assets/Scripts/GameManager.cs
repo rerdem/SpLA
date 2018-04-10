@@ -29,5 +29,10 @@ public class GameManager : MonoBehaviour {
 
 	public void initiateLoadingGameData(string filename) {
 		dc.loadGameData(filename + ".json");
+		loadLevel("town");
+	}
+
+	private void loadLevel(string scenename) {
+		SceneManager.LoadScene(scenename);
 	}
 }

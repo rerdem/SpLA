@@ -155,3 +155,51 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df55b1f85c0d838419355d12fca8b5b2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2036572119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2036572120}
+  - component: {fileID: 2036572121}
+  m_Layer: 0
+  m_Name: TownGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2036572120
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2036572119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 600.4137, y: 301.60175, z: -7.661444}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2036572121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2036572119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f56d851b37c4b3468896afdfd931b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chunks:
+  - {fileID: 1807341740408724, guid: fdcba5d906004724689fc099e2120d18, type: 2}
+  - {fileID: 1430382646217796, guid: 515c07b8cb1a0a94db34e5ec21194ca6, type: 2}
+  - {fileID: 1057763511726490, guid: e9f615a5650e6024c92d53d87a7b10ac, type: 2}
+  wall: {fileID: 1642164383995084, guid: 7163237f2e9a7a3448ea19fccce8bdac, type: 2}
+  goalGround: {fileID: 1946896799880904, guid: cba0adcc0f7f7674cae31ba1d3be71de, type: 2}
+  goal: {fileID: 1624031119572970, guid: d69ae6aad9a32c34fbe8e625131ebf5e, type: 2}
+  npcs: 3

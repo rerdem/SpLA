@@ -67,6 +67,8 @@
      <Compile Include="Assets\Scripts\SampleButton.cs" />
      <Compile Include="Assets\Scripts\SlimeAI.cs" />
      <Compile Include="Assets\Scripts\SnakeAI.cs" />
+     <Compile Include="Assets\Scripts\TownExit.cs" />
+     <Compile Include="Assets\Scripts\TownGenerator.cs" />
      <Compile Include="Assets\Scripts\WinLevel.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
