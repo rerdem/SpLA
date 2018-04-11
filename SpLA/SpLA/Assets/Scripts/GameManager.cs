@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
 
 	public DataController dc;
 
+	private int currentLecture = 0;
+
 	void Awake() {
 		if (gm == null)
 			gm = this;
@@ -27,12 +29,23 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
+	public int getNPCcount() {		
+		return dc.allLectures[currentLecture].exercises.Length;
+	}
+
+	public DataQuestion[] getexercises() {		
+		return dc.allLectures[currentLecture].exercises;
+	}
+
 	public void initiateLoadingGameData(string filename) {
 		dc.loadGameData(filename + ".json");
 		loadLevel("town");
 	}
 
-	private void loadLevel(string scenename) {
+	public void loadLevel(string scenename) {
+		if ((scenename == "town") && (SceneManager.GetActiveScene().name == "level")) {
+			currentLecture++;
+		}
 		SceneManager.LoadScene(scenename);
 	}
 }

@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void winLevel() {
+		//GameManager.gm.loadLevel("town");
 		Debug.Log("Level won!");
 	}
 
