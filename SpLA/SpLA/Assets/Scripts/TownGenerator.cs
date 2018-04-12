@@ -16,8 +16,11 @@ public class TownGenerator : MonoBehaviour {
 
 	private int currentPosition = 0;
 	private int goalPosition = 0;
+	private GameObject[] npcObjects;
 
 	public void setup(int npccount) {
+		npcObjects = new GameObject[npccount];
+
 		//place left wall
 		Instantiate(wall, new Vector2 (currentPosition * 0.7f, 0), Quaternion.identity);
 		currentPosition += 9;
@@ -40,9 +43,9 @@ public class TownGenerator : MonoBehaviour {
 
 			Instantiate(chunks[nextChunk], new Vector2 (currentPosition * 0.7f, 0), Quaternion.identity);
 
-			Instantiate(npcs[Random.Range(0, npcs.Length)], new Vector2((currentPosition + 5) * 0.7f, 1), Quaternion.identity);
+			npcObjects[npccount - i] = Instantiate(npcs[Random.Range(0, npcs.Length)], new Vector2((currentPosition + 5) * 0.7f, 1), Quaternion.identity) as GameObject;
 			if (i != 1) {
-				Instantiate(npcs[Random.Range(0, npcs.Length)], new Vector2((currentPosition + 16) * 0.7f, 1), Quaternion.identity);
+				npcObjects[npccount - i + 1] = Instantiate(npcs[Random.Range(0, npcs.Length)], new Vector2((currentPosition + 16) * 0.7f, 1), Quaternion.identity) as GameObject;
 			}
 			currentPosition += 23;
 		}
@@ -59,6 +62,10 @@ public class TownGenerator : MonoBehaviour {
 	public void placeExit() {
 		Instantiate(goal, new Vector2 (goalPosition * 0.7f, 0), Quaternion.identity);
 		//trigger on screen message?
+	}
+
+	public GameObject[] getNpcs() {
+		return npcObjects;
 	}
 
 	// Update is called once per frame

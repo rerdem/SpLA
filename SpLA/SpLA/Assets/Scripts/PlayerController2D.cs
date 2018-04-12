@@ -55,15 +55,15 @@ public class PlayerController2D : MonoBehaviour {
 
 	void Update() {
 		//jump
-		if ((grounded) && (Input.GetKeyDown(KeyCode.UpArrow))) {
+		if ((grounded) && ((Input.GetKeyDown(KeyCode.UpArrow)) || (Input.GetKeyDown(KeyCode.W)))) {
 			animator.SetBool("playerGrounded", false);
 			rigid.AddForce(new Vector2(0,jumpForce));
 		}
 		//duck
-		if (Input.GetKeyDown(KeyCode.DownArrow)) {
+		if ((Input.GetKeyDown(KeyCode.DownArrow)) || (Input.GetKeyDown(KeyCode.S))) {
 			animator.SetBool("playerDucking", true);
 		}
-		if (Input.GetKeyUp(KeyCode.DownArrow)) {
+		if ((Input.GetKeyUp(KeyCode.DownArrow)) || (Input.GetKeyUp(KeyCode.S))) {
 			animator.SetBool("playerDucking", false);
 		}
 	}
@@ -71,6 +71,13 @@ public class PlayerController2D : MonoBehaviour {
 	void flip() {
 		facingRight = !facingRight;
 		render.flipX = !render.flipX;
+	}
+
+	void OnTriggerEnter2D(Collider2D col) {
+		if (col.GetComponent<Collider2D>().tag == "NPC") {
+			Debug.Log("test");
+			//TownManager.instance.triggerExercise(col.gameObject);
+		}
 	}
 
 }

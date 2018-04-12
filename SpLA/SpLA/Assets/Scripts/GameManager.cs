@@ -29,11 +29,7 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
-	public int getNPCcount() {		
-		return dc.allLectures[currentLecture].exercises.Length;
-	}
-
-	public DataQuestion[] getexercises() {		
+	public DataQuestion[] getExercises() {		
 		return dc.allLectures[currentLecture].exercises;
 	}
 

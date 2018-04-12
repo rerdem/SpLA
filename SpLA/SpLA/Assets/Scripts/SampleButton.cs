@@ -14,7 +14,7 @@ public class SampleButton : MonoBehaviour {
 	}
 
 	public void setup(string filename) {
-		buttonLabel.text = filename.Substring(0, filename.Length - 5);;
+		buttonLabel.text = filename.Substring(0, filename.Length - 5);
 	}
 
 	public void handleClick() {
