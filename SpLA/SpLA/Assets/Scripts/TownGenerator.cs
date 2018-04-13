@@ -57,6 +57,8 @@ public class TownGenerator : MonoBehaviour {
 
 		//place right wall
 		Instantiate(wall, new Vector2 (currentPosition * 0.7f, 0), Quaternion.identity);
+
+		//Debug.Log(npcObjects[0]);
 	}
 	
 	public void placeExit() {

@@ -39,9 +39,10 @@ GameObject:
   - component: {fileID: 61299680140062264}
   - component: {fileID: 50759382537135938}
   - component: {fileID: 95376718207428088}
+  - component: {fileID: 58400389567771778}
   m_Layer: 0
   m_Name: NPC3
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +94,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58400389567771778
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376824955094816}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.55
 --- !u!61 &61299680140062264
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -105,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.14}
+  m_Offset: {x: 0, y: -0.52}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -116,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.59, y: 0.8}
+  m_Size: {x: 0.59, y: 0.02}
   m_EdgeRadius: 0
 --- !u!95 &95376718207428088
 Animator:
@@ -148,7 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopTime: 0.5
   moveSpeed: 0.026
-  moveDistance: 2
+  minMoveDistance: 2.5
+  maxMoveDistance: 3.5
 --- !u!212 &212643386101087164
 SpriteRenderer:
   m_ObjectHideFlags: 1

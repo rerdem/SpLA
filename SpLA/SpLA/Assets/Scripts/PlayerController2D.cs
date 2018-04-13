@@ -33,17 +33,19 @@ public class PlayerController2D : MonoBehaviour {
 		animator.SetBool("playerGrounded", grounded);
 
 		//horizontal movement
-		float move = Input.GetAxis ("Horizontal");
-		rigid.velocity = new Vector2 (move * maxSpeed, rigid.velocity.y);
+		if (!GameManager.gm.inExercise) {
+			float move = Input.GetAxis("Horizontal");
+			rigid.velocity = new Vector2(move * maxSpeed, rigid.velocity.y);
 
-		//flip animations
-		if ((move > 0) && (!facingRight)) {
-			flip();
-		}
-		else if ((move < 0) && (facingRight)) {
-			flip();
-		}
+			//flip animations
+			if ((move > 0) && (!facingRight)) {
+				flip();
+			}
+			else if ((move < 0) && (facingRight)) {
+				flip();
+			}
 
+		}
 		//trigger walking animation
 		if (rigid.velocity.x != 0) {
 			animator.SetBool("playerWalking", true);
@@ -75,8 +77,9 @@ public class PlayerController2D : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.GetComponent<Collider2D>().tag == "NPC") {
-			Debug.Log("test");
-			//TownManager.instance.triggerExercise(col.gameObject);
+			//Debug.Log("test");
+			//Debug.Log(col.gameObject);
+			TownManager.instance.triggerExercise(col.gameObject);
 		}
 	}
 

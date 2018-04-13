@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager gm = null;
 
 	public DataController dc;
+	public bool inExercise = false;
 
 	private int currentLecture = 0;
 

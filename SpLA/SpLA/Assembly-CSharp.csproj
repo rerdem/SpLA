@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\DataQuestion.cs" />
      <Compile Include="Assets\Scripts\DataWord.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\ImageFade.cs" />
      <Compile Include="Assets\Scripts\LanguageSelect.cs" />
      <Compile Include="Assets\Scripts\LevelGenerator.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
