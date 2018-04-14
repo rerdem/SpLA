@@ -32,37 +32,39 @@ public class NpcAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (isStopped) {
-			move = 0;
+		if (!GameManager.gm.inExercise) {
+			if (isStopped) {
+				move = 0;
 
-			timer += Time.deltaTime;
-			if (timer >= stopTime) {
-				isStopped = false;
-				timer = 0;
-			}
-		}
-		else {
-			if (!facingRight) {
-				move = moveSpeed;
+				timer += Time.deltaTime;
+				if (timer >= stopTime) {
+					isStopped = false;
+					timer = 0;
+				}
 			}
 			else {
-				move = -moveSpeed;
+				if (!facingRight) {
+					move = moveSpeed;
+				}
+				else {
+					move = -moveSpeed;
+				}
 			}
-		}
 
-		mainBody.MovePosition(mainBody.position + Vector2.left * move);
+			mainBody.MovePosition(mainBody.position + Vector2.left * move);
 
-		if (!facingRight) {
-			if (mainBody.position.x < leftmost) {
-				flip();
-				isStopped = true;
+			if (!facingRight) {
+				if (mainBody.position.x < leftmost) {
+					flip();
+					isStopped = true;
+				}
 			}
-		}
 
-		if (facingRight) {
-			if (mainBody.position.x > rightmost) {
-				flip();
-				isStopped = true;
+			if (facingRight) {
+				if (mainBody.position.x > rightmost) {
+					flip();
+					isStopped = true;
+				}
 			}
 		}
 	}

@@ -2057,6 +2057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dc: {fileID: 223237391}
+  inExercise: 0
+  tutorial: 1
 --- !u!4 &896349106
 Transform:
   m_ObjectHideFlags: 0

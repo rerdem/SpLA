@@ -243,6 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 8
   jumpForce: 700
+  interactCooldown: 5
   groundCheck: {fileID: 4243151114183298}
   whatIsGround:
     serializedVersion: 2

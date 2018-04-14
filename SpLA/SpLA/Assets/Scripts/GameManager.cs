@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 
 	public DataController dc;
 	public bool inExercise = false;
+	public bool tutorial = true;
 
 	private int currentLecture = 0;
 
@@ -32,6 +33,14 @@ public class GameManager : MonoBehaviour {
 
 	public DataQuestion[] getExercises() {		
 		return dc.allLectures[currentLecture].exercises;
+	}
+
+	public string getGrammarText() {
+		return dc.allLectures[currentLecture].grammar;
+	}
+
+	public DataWord[] getVocabulary() {
+		return dc.allLectures[currentLecture].vocabulary;
 	}
 
 	public void initiateLoadingGameData(string filename) {

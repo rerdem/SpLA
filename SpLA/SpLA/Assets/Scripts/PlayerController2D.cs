@@ -24,6 +24,8 @@ public class PlayerController2D : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		rigid = GetComponent<Rigidbody2D>();
 		render = GetComponent<SpriteRenderer>();
+
+		//cooldownTimer = interactCooldown + 0.1f;
 	}
 	
 	// Update is called once per frame
@@ -56,17 +58,19 @@ public class PlayerController2D : MonoBehaviour {
 	}
 
 	void Update() {
-		//jump
-		if ((grounded) && ((Input.GetKeyDown(KeyCode.UpArrow)) || (Input.GetKeyDown(KeyCode.W)))) {
-			animator.SetBool("playerGrounded", false);
-			rigid.AddForce(new Vector2(0,jumpForce));
-		}
-		//duck
-		if ((Input.GetKeyDown(KeyCode.DownArrow)) || (Input.GetKeyDown(KeyCode.S))) {
-			animator.SetBool("playerDucking", true);
-		}
-		if ((Input.GetKeyUp(KeyCode.DownArrow)) || (Input.GetKeyUp(KeyCode.S))) {
-			animator.SetBool("playerDucking", false);
+		if (!GameManager.gm.inExercise) {
+			//jump
+			if ((grounded) && ((Input.GetKeyDown(KeyCode.UpArrow)) || (Input.GetKeyDown(KeyCode.W)))) {
+				animator.SetBool("playerGrounded", false);
+				rigid.AddForce(new Vector2(0,jumpForce));
+			}
+			//duck
+			if ((Input.GetKeyDown(KeyCode.DownArrow)) || (Input.GetKeyDown(KeyCode.S))) {
+				animator.SetBool("playerDucking", true);
+			}
+			if ((Input.GetKeyUp(KeyCode.DownArrow)) || (Input.GetKeyUp(KeyCode.S))) {
+				animator.SetBool("playerDucking", false);
+			}
 		}
 	}
 
@@ -77,8 +81,6 @@ public class PlayerController2D : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.GetComponent<Collider2D>().tag == "NPC") {
-			//Debug.Log("test");
-			//Debug.Log(col.gameObject);
 			TownManager.instance.triggerExercise(col.gameObject);
 		}
 	}

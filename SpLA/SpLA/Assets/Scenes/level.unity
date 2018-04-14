@@ -194,7 +194,7 @@ MonoBehaviour:
   maxHeight: 3
   maxDrop: -2
   groundFillDepth: 10
-  platforms: 100
+  platforms: 50
   hazardChance: 0.5
   decorationChance: 0.5
   cloudChance: 0.5

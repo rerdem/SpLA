@@ -21,5 +21,6 @@ public class TFButton : MonoBehaviour {
 
 	public void handleClick() {
 		//trigger return correct;
+		TownManager.instance.checkTF(correct);
 	}
 }

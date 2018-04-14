@@ -8,6 +8,7 @@ public class PriorityButton : MonoBehaviour {
 	public Button button;
 	public Text buttonLabel;
 	public int priority = 0;
+	private bool clicked = false;
 
 	// Use this for initialization
 	void Start () {
@@ -17,9 +18,13 @@ public class PriorityButton : MonoBehaviour {
 	public void setup(string buttonstring, int prio) {
 		buttonLabel.text = buttonstring;
 		priority = prio;
+		clicked = false;
 	}
 
 	public void handleClick() {
 		//trigger return priority;
+		if (!clicked) {
+			clicked = TownManager.instance.checkPrio(priority);
+		}
 	}
 }

@@ -19,6 +19,9 @@ public class LevelManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Instantiate(player, new Vector2 (0, 4), Quaternion.identity);
+		//hide cursor
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 	
 	// Update is called once per frame
@@ -27,8 +30,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void winLevel() {
-		//GameManager.gm.loadLevel("town");
-		Debug.Log("Level won!");
+		GameManager.gm.loadLevel("town");
 	}
 
 	public void respawnPlayer() {

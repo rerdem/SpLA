@@ -26,16 +26,8 @@ public class ImageFade : MonoBehaviour {
 				yield return null;
 			}
 		}
-		// fade from transparent to opaque
-		else
-		{
-			// loop over 1 second
-			for (float i = 0; i <= fadeTime; i += Time.deltaTime)
-			{
-				// set color with i as alpha
-				image.color = new Color(1, 1, 1, i);
-				yield return null;
-			}
+		if (image.color.a < 3) {
+			Destroy(gameObject);
 		}
 	}
 }

@@ -7,7 +7,7 @@ public class TownExit : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.collider.tag == "Player") {
 			//LevelManager.instance.winLevel();
-			Debug.Log("Exiting town");
+			GameManager.gm.loadLevel("level");
 		}
 	}
 }
