@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\ImageDeactivate.cs" />
      <Compile Include="Assets\Scripts\ImageFade.cs" />
+     <Compile Include="Assets\Scripts\IntroManager.cs" />
      <Compile Include="Assets\Scripts\LanguageSelect.cs" />
      <Compile Include="Assets\Scripts\LevelGenerator.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
@@ -72,6 +73,7 @@
      <Compile Include="Assets\Scripts\SlimeAI.cs" />
      <Compile Include="Assets\Scripts\SnakeAI.cs" />
      <Compile Include="Assets\Scripts\TFButton.cs" />
+     <Compile Include="Assets\Scripts\ToggleObject.cs" />
      <Compile Include="Assets\Scripts\TownExit.cs" />
      <Compile Include="Assets\Scripts\TownGenerator.cs" />
      <Compile Include="Assets\Scripts\TownManager.cs" />

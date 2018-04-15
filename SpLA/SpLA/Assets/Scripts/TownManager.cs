@@ -13,6 +13,10 @@ public class TownManager : MonoBehaviour {
 
 	public GameObject[] fadables;
 
+	[Header("Title")]
+	public GameObject titlePanel;
+	public Text titleText;
+
 	[Header("MC")]
 	public GameObject mcPanel;
 	public Text mcQuestion;
@@ -68,7 +72,6 @@ public class TownManager : MonoBehaviour {
 		exercises = GameManager.gm.getExercises();
 		generator.setup(exercises.Length);
 		npcs = generator.getNpcs();
-		//Debug.Log(npcs[0]);
 		activeNPCs = npcs.Length;
 		Instantiate(player, new Vector2 (7, 1), Quaternion.identity);
 
@@ -78,6 +81,9 @@ public class TownManager : MonoBehaviour {
 		if (GameManager.gm.tutorial == true) {
 			tutorialPanel.SetActive(true);
 		}
+
+		titleText.text = GameManager.gm.getLectureTitle();
+		titlePanel.GetComponent<ImageDeactivate>().activate();
 
 		//hide cursor
 		Cursor.visible = false;

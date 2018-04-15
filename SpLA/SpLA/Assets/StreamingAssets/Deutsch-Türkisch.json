@@ -1,10 +1,10 @@
 {
     "teachinglanguage": "German",
     "learninglanguage": "Turkish",
-    "intro": "storyintroblablablablabla",
+    "intro": "Snarf, der Außerirdische ist sehr interessiert darin Sprachen zu lernen. Er ist von weit her angereist, um von den Menschen Türkisch zu lernen. Deswegen zieht er von Dorf zu Dorf, um sich die Sprache von den Anwohnern beibringen zu lassen.",
     "allLectures": [
         {
-            "title": "Begrüßungen",
+            "title": "Lektion 1: Begrüßungen",
             "grammar": "<i>İyi günler</i> 'Guten Tag' kann den ganzen Tag über und auch als Abschiedsgruß im Sinne von 'Einen schönen Tag noch' verwendet werden. <i>Merhaba</i> kann auch den ganzen Tag über verwendet werden und entspricht etwa [dem deutschen] 'Grüß Sie/dich'. Im Internet wird es auch für 'Hallo' verwendet. *Günaydın* wird in den Morgen- und frühen Vormittagsstunden verwendet. <i>İyi akşamlar</i> 'Guten Abend' sagt man in den Abendstunden und <i>İyi geceler</i> 'Gute Nacht' zu später Stunde oder beim Zubettgehen; beides kann auch als Abschiedsgruß verwendet werden.\n\nDas Türkische kennt kein Verb 'heißen'. Die Übersetzung der Fragen <i>Adınız ne?</i> und <i>Adın ne?</i> lautet 'Wie ist Ihr Name?' bzw. 'Wie ist dein Name?' (<i>wörtl.:</i> Ihr Name was? bzw. Dein Name was?). Somit kann auch [das deutsche] 'Wie heißen Sie?/Wie heißt du?' nur in dieser Variante wiedergegeben werden. In beiden Fällen enthält das Word <i>ad</i> 'Name' je ein Suffix, das 'Ihr' bzw. 'dein' bedeutet [...]. Es gibt aber auch [selbstständige] Wörter für 'Ihr' und 'dein'; sie lauten <i>sizin</i> bzw. <i>senin</i>. Diese <b>können</b> zur besonderen Hervorhebung (Betonung) gebraucht werden. Sie <b>müssen</b> gebraucht werden, wenn der Sprecher einen Kontrast herstellt, also von einer Person zur anderen wechselt: <i>Benim adım Sara. Senin adın ne?</i> 'Mein Name ist Sara. Und wie ist dein Name?'.\n\nDas Türkische kommt in der Gegenwart ohne Hilfsverb 'sein' aus. Es gibt aber Endungen, die die jeweilige Person anzeigen [...]. In der 3. Person benötigt Türkisch auch keine personenanzeigende Endung. <i>Adım Sara</i> bedeutet wörtlich 'Mein Name Sara'.",
             "vocabulary": [
                 {
@@ -120,7 +120,7 @@
             ]
         },
         {
-            "title": "Vokalharmonie und der Plural",
+            "title": "Lektion 2: Vokalharmonie und der Plural",
             "grammar": "Das Türkische hat acht Vokale: <i>a, e, i, ı, o, ö, u, ü</i>. Davon werden vier Vokale im Mund <b>vorn</b> artikuliert (das sind die <b>hellen</b> Vokale: <i>e, i, ö, ü</i>) und vier <b>hinten</b> (das sind die <b>dunklen</b> Vokale: <i>a, ı, o, u</i>). In der Regel enthält ein Wort nur helle oder nur dunkle Vokale. Entsprechend muss beim Anhängen von Suffixen der verbindende Vokal mit dem letzten Vokal des Wortstamms harmonieren. Hier gibt es die vierförmige und die zweiförmige Vokalharmonie. Bei der vierförmigen Vokalharmonie wird bei <i>e, i</i> ein <i>i</i> verwendet, bei <i>ö, ü</i> ein <i>ü</i>, bei <i>a, ı</i> ein <i>ı</i> und bei <i>o, u</i> ein <i>u</i>. Bei der zweiförmigen Vokalharmonie wird bei <i>e, i, ö, ü</i> ein <i>e</i> verwendet und bei <i>a, ı, o, u</i> ein <i>a</i>. Welche Vokalharmonie verwendet wird, hängt vom jeweiligen Suffix ab. Für die Bildung des Plurals wird die zweiförmige Vokalharmonie verwendet.\n\nDas Pluralsuffix lautet <i>-ler</i> oder <i>-lar</i> und wird betont. Ist der letzte Vokal eines Wortes <i>e</i>, <i>i</i>, <i>ö</i> oder <i>ü</i>, wird die Endung <i>-ler</i> verwendet. Ist der letzte Vokal eines Wortes <i>a</i>, <i>ı</i>, <i>o</i> oder <i>u</i>, wird die Endung <i>-lar</i> verwendet.\n\nDie Verwendung des Pluralsuffixes weicht in manchen Bereichen vom Deutschen ab. Türkische Substantive im Singular (Ausnahme: Eigennamen) stehen für die ganze Klasse und sagen nichts über die Menge oder die Anzahl aus. Bei deutschen Stoffnamen wie 'Wasser, Mehl, Gold' wird auch nichts über die Menge mitgeteilt.\n\nBei einer Frage wie <i>Bunlar ne?</i> 'Was sind das/diese?' (<i>wörtl.:</i> Diese was?) weist der Sprecher mittles <i>bunlar</i> auf eine Mehrheit hin. Aber er erfragt eine Klassenzugehörigkeit. Somit reicht es, statt 'Zeitungen' nur mit 'Zeitung' zu antworten. Die Antwort <i>gazete</i> besagt, dass es sich um die Klasse 'Zeitung' und nicht z.B. um die Klasse 'Zeitschrift' handelt.\n\nBei der Frage <i>Bu gazeteler Türkçe mi?</i> geht es dem Sprecher nicht um die Klasse[...]. Es möchte vielmehr wissen, ob die vor ihm liegenden Exemplare auf Türkisch sind - das können zwei oder mehr sein. Nun muss er das Pluralsuffix einsetzen, weil er über spezielle Einzelexemplare spricht.\n\nEin Demonstrativpronomen vor einem Substantiv im Plural steht im Türkischen im Singular. Nähere Bestimungen zu einem Substantiv stehen <b>unverändert<b> davor. Vergleichen wir:\nBu kitap Türkçe. -> Dieses Buch ist auf Türkisch.\nBu Türkçe. -> Dieses ist auf Türkisch.\nBu kitaplar Türkçe. -> Diese Bücher sind auf Türkisch. <b>Aber:</b>\nBunlar Türkçe. -> Diese sind auf Türkisch.",
             "vocabulary": [
                 {
@@ -248,5 +248,5 @@
             ]
         }
     ],
-    "outro": "storyoutroblablablablabla"
+    "outro": "Snarf hat seine Reise erfolgreich abgeschlossen. Es gibt zwar noch viel zu lernen, doch auch die interessiertesten Schüler brauchen mal eine Pause.\n\n <b>Vielen Dank fürs Spielen!</b>"
 }

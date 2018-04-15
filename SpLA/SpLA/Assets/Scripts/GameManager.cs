@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 	public DataController dc;
 	public bool inExercise = false;
 	public bool tutorial = true;
+	public bool introPlayed = false;
+	public bool playOutro = false;
 
 	private int currentLecture = 0;
 
@@ -31,8 +33,16 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
-	public DataQuestion[] getExercises() {		
-		return dc.allLectures[currentLecture].exercises;
+	public string getIntroText() {
+		return dc.intro;
+	}
+
+	public string getOutroText() {
+		return dc.outro;
+	}
+
+	public string getLectureTitle() {
+		return dc.allLectures[currentLecture].title;
 	}
 
 	public string getGrammarText() {
@@ -43,14 +53,27 @@ public class GameManager : MonoBehaviour {
 		return dc.allLectures[currentLecture].vocabulary;
 	}
 
+	public DataQuestion[] getExercises() {		
+		return dc.allLectures[currentLecture].exercises;
+	}
+
 	public void initiateLoadingGameData(string filename) {
 		dc.loadGameData(filename + ".json");
-		loadLevel("town");
+		if (dc.intro != "") {
+			loadLevel("intro_outro");
+		}
+		else {
+			loadLevel("town");
+		}
 	}
 
 	public void loadLevel(string scenename) {
 		if ((scenename == "town") && (SceneManager.GetActiveScene().name == "level")) {
 			currentLecture++;
+		}
+
+		if ((scenename == "level") && (currentLecture == (dc.allLectures.Length - 1))) {
+			playOutro = true;
 		}
 		SceneManager.LoadScene(scenename);
 	}

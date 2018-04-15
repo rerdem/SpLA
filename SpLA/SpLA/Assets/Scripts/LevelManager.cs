@@ -30,7 +30,12 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void winLevel() {
-		GameManager.gm.loadLevel("town");
+		if (GameManager.gm.playOutro) {
+			GameManager.gm.loadLevel("intro_outro");
+		}
+		else {
+			GameManager.gm.loadLevel("town");
+		}
 	}
 
 	public void respawnPlayer() {
