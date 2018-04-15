@@ -43,6 +43,7 @@ public class TownManager : MonoBehaviour {
 
 	[Header("UI Icons")]
 	public GameObject tutorialPanel;
+	public GameObject musicButtonPrompt;
 	public GameObject grammarButtonPrompt;
 	public GameObject vocabButtonPrompt;
 	public GameObject trueIcon;
@@ -76,6 +77,7 @@ public class TownManager : MonoBehaviour {
 		Instantiate(player, new Vector2 (7, 1), Quaternion.identity);
 
 		//show UI elements
+		musicButtonPrompt.SetActive(true);
 		grammarButtonPrompt.SetActive(true);
 		vocabButtonPrompt.SetActive(true);
 		if (GameManager.gm.tutorial == true) {

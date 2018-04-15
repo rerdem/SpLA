@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	public bool tutorial = true;
 	public bool introPlayed = false;
 	public bool playOutro = false;
+	public bool playMusic = true;
 
 	private int currentLecture = 0;
 
@@ -30,7 +31,13 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKeyDown(KeyCode.M)) {
+			playMusic = !playMusic;
+		}
+	}
+
+	public void toggleMusic() {
+		playMusic = !playMusic;
 	}
 
 	public string getIntroText() {

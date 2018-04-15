@@ -66,6 +66,8 @@
      <Compile Include="Assets\Scripts\LanguageSelect.cs" />
      <Compile Include="Assets\Scripts\LevelGenerator.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\MusicImageSwitcher.cs" />
+     <Compile Include="Assets\Scripts\MusicSoundToggler.cs" />
      <Compile Include="Assets\Scripts\NpcAI.cs" />
      <Compile Include="Assets\Scripts\PlayerController2D.cs" />
      <Compile Include="Assets\Scripts\PriorityButton.cs" />

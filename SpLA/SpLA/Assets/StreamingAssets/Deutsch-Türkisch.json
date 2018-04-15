@@ -208,22 +208,22 @@
                     "questionText": "Klicke die Pluralendungen in der richtigen Reihenfolge an: Yemek, Şoför, Adam, Hanım",
                     "answers": [
                         {
-                            "answerText": "-ler",
+                            "answerText": "-ler (1)",
                             "isCorrect": false,
                             "queuePos": 1
                         },
                         {
-                            "answerText": "-ler",
+                            "answerText": "-ler (2)",
                             "isCorrect": false,
                             "queuePos": 2
                         },
                         {
-                            "answerText": "-lar",
+                            "answerText": "-lar (1)",
                             "isCorrect": false,
                             "queuePos": 3
                         },
                         {
-                            "answerText": "-lar",
+                            "answerText": "-lar (2)",
                             "isCorrect": false,
                             "queuePos": 4
                         }

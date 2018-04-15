@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour {
 	public static LevelManager instance = null;
 
 	public GameObject player;
+	public GameObject muteIcon;
+	private GameObject playerObject;
 
 	void Awake() {
 		if (instance == null)
@@ -18,7 +20,7 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Instantiate(player, new Vector2 (0, 4), Quaternion.identity);
+		playerObject = Instantiate(player, new Vector2 (0, 4), Quaternion.identity);
 		//hide cursor
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
@@ -26,7 +28,12 @@ public class LevelManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if ((GameManager.gm.playMusic) && (muteIcon.activeInHierarchy)) {
+			muteIcon.SetActive(false);
+		}
+		if ((!GameManager.gm.playMusic) && (!muteIcon.activeInHierarchy)) {
+			muteIcon.SetActive(true);
+		}
 	}
 
 	public void winLevel() {
@@ -39,8 +46,9 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void respawnPlayer() {
-		destroyAllObjectsWithTag("Player");
-		Instantiate(player, new Vector2 (0, 4), Quaternion.identity);
+		//destroyAllObjectsWithTag("Player");
+		//Instantiate(player, new Vector2(0, 4), Quaternion.identity);
+		playerObject.transform.position = new Vector2(0, 4);
 	}
 
 	void destroyAllObjectsWithTag(string tag) {
