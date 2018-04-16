@@ -2,23 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Activates a GameObject and deactivates it after display time is reached.
+/// </summary>
 public class ImageDeactivate : MonoBehaviour {
 
 	public float displayTime = 5.0f;
 
 	private float internalTimer;
 
+	/// <summary>
+	/// Activates this object and starts the timer.
+	/// </summary>
 	public void activate() {
 		internalTimer = displayTime;
 		gameObject.SetActive(true);
 	}
 
-	// Use this for initialization
 	void Start () {
 		internalTimer = displayTime;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (gameObject.activeInHierarchy) {
 			internalTimer -= Time.deltaTime;

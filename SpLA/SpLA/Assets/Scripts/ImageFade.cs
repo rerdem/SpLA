@@ -3,27 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Fades out the attached Image object over the course of the specified fade time.
+/// </summary>
 public class ImageFade : MonoBehaviour {
 
-	// the image you want to fade, assign in inspector
 	public Image image;
 	public float fadeTime = 1.0f;
 
+	/// <summary>
+	/// Triggers the fading effect.
+	/// </summary>
+	/// <param name="fadeAway">If set to <c>true</c> fade away.</param>
 	public void fadeImage(bool fadeAway) {
 		StartCoroutine(FadeImage(true));
 	}
 
+	/// <summary>
+	/// Fades the image.
+	/// </summary>
+	/// <returns>The image.</returns>
+	/// <param name="fadeAway">If set to <c>true</c> fade away.</param>
 	IEnumerator FadeImage(bool fadeAway) {
-		// fade from opaque to transparent
 		if (fadeAway) {
-			// loop over 1 second backwards
 			for (float i = fadeTime; i >= 0; i -= Time.deltaTime) {
-				// set color with i as alpha
 				image.color = new Color(1, 1, 1, i);
 				yield return null;
 			}
 		}
 
+		//destroy this object after it has faded enough
 		if (image.color.a < 3) {
 			Destroy(gameObject);
 		}

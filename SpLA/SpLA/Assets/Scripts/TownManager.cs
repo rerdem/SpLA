@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Handles gameplay in towns.
+/// </summary>
 public class TownManager : MonoBehaviour {
 
 	public static TownManager instance = null;
@@ -65,10 +68,8 @@ public class TownManager : MonoBehaviour {
 			instance = this;
 		else if (instance != null)
 			Destroy(gameObject);
-		//DontDestroyOnLoad(gameObject);
 	}
 
-	// Use this for initialization
 	void Start () {
 		exercises = GameManager.gm.getExercises();
 		generator.setup(exercises.Length);
@@ -84,14 +85,17 @@ public class TownManager : MonoBehaviour {
 			tutorialPanel.SetActive(true);
 		}
 
+		//show title card
 		titleText.text = GameManager.gm.getLectureTitle();
 		titlePanel.GetComponent<ImageDeactivate>().activate();
 
 		//hide cursor
 		Cursor.visible = false;
-		//Cursor.lockState = CursorLockMode.Locked;
 	}
 
+	/// <summary>
+	/// Toggles the grammar UI panel.
+	/// </summary>
 	public void toggleGrammarPanel() {
 		if (!grammarInitiated) {
 			grammarText.text = GameManager.gm.getGrammarText();
@@ -103,7 +107,6 @@ public class TownManager : MonoBehaviour {
 
 			GameManager.gm.inExercise = true;
 			Cursor.visible = true;
-			Cursor.lockState = CursorLockMode.Confined;
 		}
 		else {
 			grammarPanel.SetActive(false);
@@ -112,6 +115,9 @@ public class TownManager : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Toggles the vocabulary UI panel.
+	/// </summary>
 	public void toggleVocabPanel() {
 		if (!vocabularyInitiated) {
 			DataWord[] vocabulary = GameManager.gm.getVocabulary();
@@ -133,7 +139,6 @@ public class TownManager : MonoBehaviour {
 
 			GameManager.gm.inExercise = true;
 			Cursor.visible = true;
-			Cursor.lockState = CursorLockMode.Confined;
 		}
 		else {
 			vocabPanel.SetActive(false);
@@ -142,9 +147,13 @@ public class TownManager : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Opens the exercise panel and sets it up according to exercise type.
+	/// </summary>
+	/// <param name="askedNPC">The NPC's GameObject the player collided with.</param>
 	public void triggerExercise(GameObject askedNPC) {
 		currentNPCindex = getNPCindex(askedNPC);
-		//Debug.Log(currentNPCindex);
+
 		switch (exercises[currentNPCindex].type) {
 			case "MC":
 				mcQuestion.text = exercises[currentNPCindex].questionText;
@@ -173,45 +182,58 @@ public class TownManager : MonoBehaviour {
 			default:
 				break;
 		}
-		//deactivate NPC
-		//deactivateNPC(currentNPCindex);
+
 		//deactivate movement
 		GameManager.gm.inExercise = true;
+
 		//show cursor
 		Cursor.visible = true;
-		Cursor.lockState = CursorLockMode.Confined;
 	}
 
+	/// <summary>
+	/// Cancels the exercise.
+	/// </summary>
 	public void cancelExercise() {
 		mcPanel.SetActive(false);
 		mpPanel.SetActive(false);
 		tfPanel.SetActive(false);
-		//activate NPC
-		//activateNPC(currentNPCindex);
+
 		//deactivate movement
 		GameManager.gm.inExercise = false;
+
 		//show cursor
 		Cursor.visible = false;
 	}
 
+	/// <summary>
+	/// Checks if the clicked button is correct.
+	/// </summary>
+	/// <param name="isCorrect">If set to <c>true</c> it is correct, if <c>false</c> it is not.</param>
 	public void checkTF(bool isCorrect) {
 		if (isCorrect) {
 			mcPanel.SetActive(false);
 			tfPanel.SetActive(false);
 			trueIcon.GetComponent<ImageDeactivate>().activate();
+
 			//deactivate NPC
 			deactivateNPC(currentNPCindex);
+
 			//activate movement
 			GameManager.gm.inExercise = false;
+
 			//hide cursor
 			Cursor.visible = false;
-			//Cursor.lockState = CursorLockMode.Locked;
 		}
 		else {
 			falseIcon.GetComponent<ImageDeactivate>().activate();
 		}
 	}
 
+	/// <summary>
+	/// Checks if the clicked button is correct.
+	/// </summary>
+	/// <returns><c>true</c>, if the clicked button has the correct priority, <c>false</c> otherwise.</returns>
+	/// <param name="buttonPriority">Button priority.</param>
 	public bool checkPrio(int buttonPriority) {
 		if (buttonPriority == (currentAnswerPriority + 1)) {
 			trueIcon.GetComponent<ImageDeactivate>().activate();
@@ -224,18 +246,25 @@ public class TownManager : MonoBehaviour {
 
 		if (buttonPriority == 4) {
 			mpPanel.SetActive(false);
+
 			//deactivate NPC
 			deactivateNPC(currentNPCindex);
+
 			//activate movement
 			GameManager.gm.inExercise = false;
+
 			//hide cursor
 			Cursor.visible = false;
-			//Cursor.lockState = CursorLockMode.Locked;
 		}
 
 		return true;
 	}
 
+	/// <summary>
+	/// Gets the NPC's index.
+	/// </summary>
+	/// <returns>The NPC's index.</returns>
+	/// <param name="askedNPC">The NPC's GameObject the player collided with.</param>
 	private int getNPCindex(GameObject askedNPC) {
 		for (int i = 0; i < npcs.Length; i++) {
 			if (GameObject.ReferenceEquals(askedNPC, npcs[i])) {
@@ -245,17 +274,24 @@ public class TownManager : MonoBehaviour {
 		return 0;
 	}
 
+	/// <summary>
+	/// Activates the NPC.
+	/// </summary>
+	/// <param name="index">Index of the NPC to be activated.</param>
 	private void activateNPC(int index) {
 		npcs[index].SetActive(true);
 		activeNPCs++;
 	}
 
+	/// <summary>
+	/// Deactivates the NPC.
+	/// </summary>
+	/// <param name="index">Index of the NPC to be deactivated.</param>
 	private void deactivateNPC(int index) {
 		npcs[index].SetActive(false);
 		activeNPCs--;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if ((!exitPlaced) && (activeNPCs == 0) && (!GameManager.gm.inExercise)) {
 			generator.placeExit();
@@ -276,6 +312,9 @@ public class TownManager : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Fades out all fadable UI elements.
+	/// </summary>
 	private void fadeOutUI() {
 		foreach (GameObject g in fadables) {
 			if (g.activeInHierarchy) {
@@ -286,6 +325,10 @@ public class TownManager : MonoBehaviour {
 		GameManager.gm.tutorial = false;
 	}
 
+	/// <summary>
+	/// Shuffles the answers of an exercise.
+	/// </summary>
+	/// <param name="answers">Answer array to be shuffled.</param>
 	private void shuffleAnswers(DataAnswer[] answers) {
 		for (int i = 0; i < answers.Length; i++) {
 			DataAnswer temp = answers[i];

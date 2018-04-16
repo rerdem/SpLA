@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages gameplay in the platforming sections.
+/// </summary>
 public class LevelManager : MonoBehaviour {
 
 	public static LevelManager instance = null;
 
 	public GameObject player;
 	public GameObject muteIcon;
+
 	private GameObject playerObject;
 
 	void Awake() {
@@ -15,18 +19,15 @@ public class LevelManager : MonoBehaviour {
 			instance = this;
 		else if (instance != null)
 			Destroy(gameObject);
-		//DontDestroyOnLoad(gameObject);
 	}
 
-	// Use this for initialization
 	void Start () {
 		playerObject = Instantiate(player, new Vector2 (0, 4), Quaternion.identity);
+
 		//hide cursor
 		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if ((GameManager.gm.playMusic) && (muteIcon.activeInHierarchy)) {
 			muteIcon.SetActive(false);
@@ -34,8 +35,16 @@ public class LevelManager : MonoBehaviour {
 		if ((!GameManager.gm.playMusic) && (!muteIcon.activeInHierarchy)) {
 			muteIcon.SetActive(true);
 		}
+
+		//skip level cheat button for evaluation purposes in context of this master thesis
+		if (Input.GetKeyDown(KeyCode.C)) {
+			winLevel();
+		}
 	}
 
+	/// <summary>
+	/// Loads the next scene.
+	/// </summary>
 	public void winLevel() {
 		if (GameManager.gm.playOutro) {
 			GameManager.gm.loadLevel("intro_outro");
@@ -45,17 +54,10 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Respawns the player.
+	/// </summary>
 	public void respawnPlayer() {
-		//destroyAllObjectsWithTag("Player");
-		//Instantiate(player, new Vector2(0, 4), Quaternion.identity);
 		playerObject.transform.position = new Vector2(0, 4);
-	}
-
-	void destroyAllObjectsWithTag(string tag) {
-		GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tag);
-
-		for (int i = 0; i < gameObjects.Length; i++) {
-			Destroy(gameObjects[i]);
-		}
 	}
 }

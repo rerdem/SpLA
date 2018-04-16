@@ -2,28 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles behavior of snakes.
+/// </summary>
 public class SnakeAI : MonoBehaviour {
 
 	public float moveSpeed = 0.025f;
-	private float move;
 	public float stopTime = 0.5f;
 	public float moveDistance = 1f;
 
 	private Rigidbody2D rigid;
 
+	private float move;
 	private bool goingUp = true;
-
 	private float originalPosition;
-
 	private float timer;
 
-	// Use this for initialization
 	void Start () {
 		rigid = GetComponent<Rigidbody2D>();
 		originalPosition = rigid.position.y;
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
 		if (goingUp) {
 			move = moveSpeed;

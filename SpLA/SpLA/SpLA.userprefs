@@ -1,27 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TownManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerController2D.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameManager.cs" Line="40" Column="26" />
-      <File FileName="Assets\Scripts\DataController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DataGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TownGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TownManager.cs" Line="80" Column="8" />
-      <File FileName="Assets\Scripts\IntroManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelManager.cs" Line="51" Column="15" />
-      <File FileName="Assets\Scripts\TownExit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DataLecture.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DataQuestion.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DataWord.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LevelManager.cs" Line="28" Column="26" />
+      <File FileName="Assets\Scripts\SlimeAI.cs" Line="50" Column="3" />
+      <File FileName="Assets\Scripts\BeeAI.cs" Line="6" Column="1" />
       <File FileName="Assets\Scripts\PlayerController2D.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LanguageSelect.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SampleButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ImageFade.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ImageDeactivate.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ToggleObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MusicImageSwitcher.cs" Line="23" Column="4" />
-      <File FileName="Assets\Scripts\MusicSoundToggler.cs" Line="20" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

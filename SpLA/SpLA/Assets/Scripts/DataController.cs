@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+/// <summary>
+/// Handles loading of game data and allows acces to it.
+/// </summary>
 public class DataController : MonoBehaviour {
 
 	public string teachinglanguage;
@@ -11,31 +14,19 @@ public class DataController : MonoBehaviour {
 	public DataLecture[] allLectures;
 	public string outro;
 
-	//public DataGame gameData;
-
-	//public string gameDataFileName = "data.json";
-
 	void Start() {
 		DontDestroyOnLoad(gameObject);
-		//LoadGameData();
 	}
-		
-//	public void SaveGameData() {
-//		gameDataFileName = "data2.json";
-//		string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
-//
-//		string contents = JsonUtility.ToJson(gameData, true);
-//		File.WriteAllText(filePath, contents);
-//	}
 
+	/// <summary>
+	/// Loads the game data.
+	/// </summary>
+	/// <param name="gameDataFileName">Filename of the JSON file containing the game data.</param>
 	public void loadGameData(string gameDataFileName) {
 		string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
 
 		if (File.Exists(filePath)) {
 			string dataAsJson = File.ReadAllText(filePath);
-
-			//Debug.Log(dataAsJson);
-
 			DataGame loadedData = JsonUtility.FromJson<DataGame>(dataAsJson);
 
 			teachinglanguage = loadedData.teachinglanguage;
@@ -49,6 +40,11 @@ public class DataController : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Gets the all the data of the specified lecture.
+	/// </summary>
+	/// <returns>The DataLecture object.</returns>
+	/// <param name="lectureID">ID of the lecture.</param>
 	public DataLecture GetLectureData(int lectureID) {
 		return allLectures[lectureID];
 	}

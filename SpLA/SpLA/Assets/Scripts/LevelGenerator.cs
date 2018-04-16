@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Generates a platforming level.
+/// </summary>
 public class LevelGenerator : MonoBehaviour {
 
 	[Header("Tiles")]
@@ -53,7 +56,6 @@ public class LevelGenerator : MonoBehaviour {
 	private int blockHeight = 0;
 	private bool isHazard = false;
 
-	// Use this for initialization
 	void Start () {
 		//build left wall
 		for (int i = 1; i <= 16; i++) {
@@ -116,15 +118,22 @@ public class LevelGenerator : MonoBehaviour {
 								Instantiate(decorations[Mathf.RoundToInt(Random.Range(0,decorations.Length))], new Vector2 (blockNum * 0.7f, blockHeight + 0.7f), Quaternion.identity);
 							}
 
-							//place enemies
-							if (Random.value < enemyDensity) {
-								switch (Mathf.RoundToInt(Random.Range(0, 3))) {
-									case 0: Instantiate(bee, new Vector2 (blockNum * 0.7f, blockHeight + 2f), Quaternion.identity);
-										break;
-									case 1: Instantiate(slime, new Vector2 (blockNum * 0.7f, blockHeight + 0.7f), Quaternion.identity);
-										break;
-									default: Instantiate(snake, new Vector2 (blockNum * 0.7f, blockHeight + 1f), Quaternion.identity);
-										break;
+							//place enemies on platforms size 3+
+							if (platformSize > 2) {
+								if (Random.value < enemyDensity) {
+									switch (Mathf.RoundToInt(Random.Range(0, 3))) {
+										case 0:
+											Instantiate(bee, new Vector2(blockNum * 0.7f, blockHeight + 2f), Quaternion.identity);
+											break;
+										case 1:
+											Instantiate(slime, new Vector2(blockNum * 0.7f, blockHeight + 0.7f), Quaternion.identity);
+											break;
+										default:
+											if ((j != 0) || (j != (platformSize - 1))) {
+												Instantiate(snake, new Vector2(blockNum * 0.7f, blockHeight + 1f), Quaternion.identity);
+											}
+											break;
+									}
 								}
 							}
 
@@ -152,15 +161,22 @@ public class LevelGenerator : MonoBehaviour {
 								Instantiate(decorations[Mathf.RoundToInt(Random.Range(0,decorations.Length))], new Vector2 (blockNum * 0.7f, blockHeight + 0.7f), Quaternion.identity);
 							}
 
-							//place enemies
-							if (Random.value < enemyDensity) {
-								switch (Mathf.RoundToInt(Random.Range(0, 3))) {
-								case 0: Instantiate(bee, new Vector2 (blockNum * 0.7f, blockHeight + 2f), Quaternion.identity);
-									break;
-								case 1: Instantiate(slime, new Vector2 (blockNum * 0.7f, blockHeight + 0.7f), Quaternion.identity);
-									break;
-								default: Instantiate(snake, new Vector2 (blockNum * 0.7f, blockHeight + 1f), Quaternion.identity);
-									break;
+							//place enemies on platforms size 3+
+							if (platformSize > 2) {
+								if (Random.value < enemyDensity) {
+									switch (Mathf.RoundToInt(Random.Range(0, 3))) {
+										case 0:
+											Instantiate(bee, new Vector2(blockNum * 0.7f, blockHeight + 2f), Quaternion.identity);
+											break;
+										case 1:
+											Instantiate(slime, new Vector2(blockNum * 0.7f, blockHeight + 0.7f), Quaternion.identity);
+											break;
+										default:
+											if ((j != 0) || (j != (platformSize - 1))) {
+												Instantiate(snake, new Vector2(blockNum * 0.7f, blockHeight + 1f), Quaternion.identity);
+											}
+											break;
+									}
 								}
 							}
 
@@ -213,10 +229,5 @@ public class LevelGenerator : MonoBehaviour {
 				Instantiate(stoneCenter, new Vector2 ((blockNum + i) * 0.7f, (blockHeight + j) * 0.7f), Quaternion.identity);
 			}
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

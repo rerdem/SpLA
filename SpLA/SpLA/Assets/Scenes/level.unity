@@ -408,7 +408,7 @@ MonoBehaviour:
   - {fileID: 1877700372675788, guid: bc4e4dd39e04d1246a5edcc021b4f2b5, type: 2}
   - {fileID: 1895857470318532, guid: 7d43038c2b772424c86ebda853e9aad3, type: 2}
   - {fileID: 1094377592322214, guid: beb3e3f493aef6b4ba11420f598069e4, type: 2}
-  bee: {fileID: 1734248995054334, guid: fbc842c01707ffe44928b4f6f7219281, type: 2}
+  bee: {fileID: 1492797612623088, guid: fbc842c01707ffe44928b4f6f7219281, type: 2}
   slime: {fileID: 1662839377750752, guid: b82ee83f6db540645a4fd8fb950cc926, type: 2}
   snake: {fileID: 1065802197818872, guid: 850a0bece9760de42be706a530679f8a, type: 2}
   minPlatformSize: 2

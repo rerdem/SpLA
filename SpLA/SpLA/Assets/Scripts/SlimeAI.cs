@@ -2,30 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles behavior of slime.
+/// </summary>
 public class SlimeAI : MonoBehaviour {
 
 	public GameObject leftEdge;
 	public GameObject rightEdge;
 
+	public float stopTime = 0.5f;
+	public float moveSpeed = 0.025f;
+
 	private Rigidbody2D mainBody;
 	private SpriteRenderer render;
 
-	public float stopTime = 0.5f;
-	public float moveSpeed = 0.025f;
 	private float move;
-
 	private bool facingRight = false;
 	private bool isStopped = false;
-
 	private float timer;
 
-	// Use this for initialization
 	void Start () {
 		mainBody = GetComponentInParent<Rigidbody2D>();
 		render = GetComponentInParent<SpriteRenderer>();
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
 		if (isStopped) {
 			move = 0;
@@ -68,6 +68,9 @@ public class SlimeAI : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Flip this object.
+	/// </summary>
 	void flip() {
 		facingRight = !facingRight;
 		render.flipX = !render.flipX;

@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Specifies behavior of friendly NPCs.
+/// </summary>
 public class NpcAI : MonoBehaviour {
-
-	private Rigidbody2D mainBody;
-	private SpriteRenderer render;
-
+	
 	public float stopTime = 0.5f;
 	public float moveSpeed = 0.025f;
 	public float minMoveDistance = 2.5f;
 	public float maxMoveDistance = 3.5f;
-	private float move;
 
+	private Rigidbody2D mainBody;
+	private SpriteRenderer render;
+
+	private float move;
 	private float leftmost;
 	private float rightmost;
-
 	private bool facingRight = true;
 	private bool isStopped = false;
-
 	private float timer;
 
-	// Use this for initialization
 	void Start () {
 		mainBody = GetComponentInParent<Rigidbody2D>();
 		render = GetComponentInParent<SpriteRenderer>();
@@ -30,7 +30,6 @@ public class NpcAI : MonoBehaviour {
 		rightmost = leftmost + Random.Range(minMoveDistance, maxMoveDistance);
 	}
 
-	// Update is called once per frame
 	void FixedUpdate () {
 		if (!GameManager.gm.inExercise) {
 			if (isStopped) {
@@ -69,6 +68,9 @@ public class NpcAI : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Flip this object.
+	/// </summary>
 	void flip() {
 		facingRight = !facingRight;
 		render.flipX = !render.flipX;

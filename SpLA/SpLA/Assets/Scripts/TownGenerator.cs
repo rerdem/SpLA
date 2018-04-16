@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Generates a town depending on the number of exercises to be completed.
+/// </summary>
 public class TownGenerator : MonoBehaviour {
 
 	[Header("Chunks")]
@@ -11,13 +14,14 @@ public class TownGenerator : MonoBehaviour {
 	public GameObject goalGround;
 	public GameObject goal;
 
-	//[Header("NPCs")]
-	//public int npcs = 3;
-
 	private int currentPosition = 0;
 	private int goalPosition = 0;
 	private GameObject[] npcObjects;
 
+	/// <summary>
+	/// Setup the town depending on the specified NPC count.
+	/// </summary>
+	/// <param name="npccount">Number of NPCs.</param>
 	public void setup(int npccount) {
 		npcObjects = new GameObject[npccount];
 
@@ -57,20 +61,20 @@ public class TownGenerator : MonoBehaviour {
 
 		//place right wall
 		Instantiate(wall, new Vector2 (currentPosition * 0.7f, 0), Quaternion.identity);
-
-		//Debug.Log(npcObjects[0]);
 	}
-	
+
+	/// <summary>
+	/// Places the exit.
+	/// </summary>
 	public void placeExit() {
 		Instantiate(goal, new Vector2 (goalPosition * 0.7f, 0), Quaternion.identity);
-		//trigger on screen message?
 	}
 
+	/// <summary>
+	/// Gets all NPCs in town.
+	/// </summary>
+	/// <returns>An array of all spawned NPCs.</returns>
 	public GameObject[] getNpcs() {
 		return npcObjects;
-	}
-
-	// Update is called once per frame
-	void Update () {
 	}
 }

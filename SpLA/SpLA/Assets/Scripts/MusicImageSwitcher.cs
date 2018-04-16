@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Switches the image of the object depending play status of music.
+/// </summary>
 public class MusicImageSwitcher : MonoBehaviour {
 
 	public Sprite onSprite;
 	public Sprite offSprite;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update () {
 		if (GameManager.gm.playMusic) {
 			gameObject.GetComponent<Image>().sprite = onSprite;

@@ -4,20 +4,26 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 
+/// <summary>
+/// Generates buttons for each file in the StreamingAssets folder.
+/// </summary>
 public class LanguageSelect : MonoBehaviour {
 
-	private FileInfo[] info;
 	public Transform contentPanel;
 	public GameObject buttonPrefab;
 
-	// Use this for initialization
+	private FileInfo[] info;
+
 	void Start () {
 		string dirPath = Application.streamingAssetsPath.ToString();
 		DirectoryInfo dir = new DirectoryInfo(dirPath);
 		info = dir.GetFiles("*.json");
 		addButtons();
 	}
-	
+
+	/// <summary>
+	/// Adds the buttons.
+	/// </summary>
 	private void addButtons() {
 		foreach (FileInfo f in info) {
 			//Debug.Log(f.Name);

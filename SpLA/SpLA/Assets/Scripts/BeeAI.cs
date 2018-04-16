@@ -2,58 +2,75 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Specifies AI behavior of bees.
+/// </summary>
 public class BeeAI : MonoBehaviour {
 
-	public float maxSpeed = 2.5f;
+	public GameObject leftEdge;
+	public GameObject rightEdge;
 
-	bool facingRight = false;
+	public float stopTime = 0.5f;
+	public float moveSpeed = 0.025f;
 
-	private Rigidbody2D rigid;
+	private Rigidbody2D mainBody;
 	private SpriteRenderer render;
 
-	bool grounded = false;
-	int groundedCooldown = 0;
-	public Transform groundCheck;
-	float groundRadius = 0.2f;
-	public LayerMask whatIsGround;
+	private float move;
+	private bool facingRight = false;
+	private bool isStopped = false;
+	private float timer;
 
-	// Use this for initialization
 	void Start () {
-		rigid = GetComponent<Rigidbody2D>();
-		render = GetComponent<SpriteRenderer>();
+		mainBody = GetComponentInParent<Rigidbody2D>();
+		render = GetComponentInParent<SpriteRenderer>();
 	}
-	
-	// Update is called once per frame
+
 	void FixedUpdate () {
-		if (groundedCooldown <= 0) {
-			grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+		if (isStopped) {
+			move = 0;
+
+			timer += Time.deltaTime;
+			if (timer >= stopTime) {
+				isStopped = false;
+				timer = 0;
+			}
 		}
 		else {
-			groundedCooldown--;
+			if (!facingRight) {
+				move = moveSpeed;
+			}
+			else {
+				move = -moveSpeed;
+			}
 		}
 
-		//horizontal movement
+		mainBody.MovePosition(mainBody.position + Vector2.left * move);
+
+		RaycastHit2D hitLeft = Physics2D.Raycast(leftEdge.transform.position, Vector2.down, 2.5f);
+		RaycastHit2D hitRight = Physics2D.Raycast(rightEdge.transform.position, Vector2.down, 2.5f);
+
+		RaycastHit2D hitWallLeft = Physics2D.Raycast(leftEdge.transform.position, Vector2.left, 0.01f);
+		RaycastHit2D hitWallRight = Physics2D.Raycast(rightEdge.transform.position, Vector2.right, 0.01f);
+
+		if (!facingRight) {
+			if ((hitLeft.collider == null) || (hitWallLeft.collider != null)) {
+				flip();
+				isStopped = true;
+			}
+		}
+
 		if (facingRight) {
-			rigid.velocity = new Vector2 (maxSpeed, rigid.velocity.y);
-		}
-		else {
-			rigid.velocity = new Vector2 (-maxSpeed, rigid.velocity.y);
-		}
-
-		//flip animations
-		if (!grounded) {
-			flip();
-			grounded = true;
-			groundedCooldown = 5;
+			if ((hitRight.collider == null) || (hitWallRight.collider != null)) {
+				flip();
+				isStopped = true;
+			}
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D col) {
-		if (col.collider.tag != "Player") {
-			flip();
-		}
-	}
-
+	/// <summary>
+	/// Flip this object.
+	/// </summary>
 	void flip() {
 		facingRight = !facingRight;
 		render.flipX = !render.flipX;

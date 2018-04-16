@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Mutes/Unmutes the AudioSource depending on music flag on GameManager.
+/// </summary>
 public class MusicSoundToggler : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update () {
 		if (GameManager.gm.playMusic) {
 			gameObject.GetComponent<AudioSource>().mute = false;

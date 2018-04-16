@@ -1,0 +1,184 @@
+{
+    "teachinglanguage": "Test",
+    "learninglanguage": "Test",
+    "intro": "Hier steht der Intro-Text.",
+    "allLectures": [
+        {
+            "title": "Lektion 1: Test-Lektion 1",
+            "grammar": "Dies ist ein Beispieltext.\n\nEs gibt neue Absätze, <b>fetten Text</b> und <i>kursiven Text</i>.",
+            "vocabulary": [
+                {
+                    "word": "Wort 1",
+                    "translation": "Übersetzung 1"
+                },
+                {
+                    "word": "Wort 2",
+                    "translation": "Übersetzung 2"
+                },
+                {
+                    "word": "Wort 3",
+                    "translation": "Übersetzung 3"
+                }
+            ],
+            "exercises": [
+                {
+                    "type": "MC",
+                    "questionText": "Finde die richtige Antwort: Multiple Choice",
+                    "answers": [
+                        {
+                            "answerText": "Falsche Antwort.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Richtige Antwort.",
+                            "isCorrect": true,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Falsche Antwort.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Falsche Antwort.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "MP",
+                    "questionText": "Klicke die Antworten in der richtigen Reihenfolge an: 1, 2, 3, 4",
+                    "answers": [
+                        {
+                            "answerText": "1!",
+                            "isCorrect": false,
+                            "queuePos": 1
+                        },
+						{
+                            "answerText": "2!",
+                            "isCorrect": false,
+                            "queuePos": 2
+                        },
+                        {
+                            "answerText": "3!",
+                            "isCorrect": false,
+                            "queuePos": 3
+                        },
+                        {
+                            "answerText": "4!",
+                            "isCorrect": false,
+                            "queuePos": 4
+                        }
+                    ]
+                },
+                {
+                    "type": "TF",
+                    "questionText": "Ist dieser Satz korrekt? Ja, er ist richtig.",
+                    "answers": [
+                        {
+                            "answerText": "Richtig.",
+                            "isCorrect": true,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Falsch.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Lektion 2: Test-Lektion 2",
+            "grammar": "Dies ist ein Beispieltext.\n\nEs gibt neue Absätze, <b>fetten Text</b> und <i>kursiven Text</i>.",
+            "vocabulary": [
+                {
+                    "word": "Wort 1",
+                    "translation": "Übersetzung 1"
+                },
+                {
+                    "word": "Wort 2",
+                    "translation": "Übersetzung 2"
+                },
+                {
+                    "word": "Wort 3",
+                    "translation": "Übersetzung 3"
+                }
+            ],
+            "exercises": [
+                {
+                    "type": "MC",
+                    "questionText": "Finde die richtige Antwort: Multiple Choice",
+                    "answers": [
+                        {
+                            "answerText": "Falsche Antwort.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Richtige Antwort.",
+                            "isCorrect": true,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Falsche Antwort.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Falsche Antwort.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "MP",
+                    "questionText": "Klicke die Antworten in der richtigen Reihenfolge an: 1, 2, 3, 4",
+                    "answers": [
+                        {
+                            "answerText": "1!",
+                            "isCorrect": false,
+                            "queuePos": 1
+                        },
+						{
+                            "answerText": "2!",
+                            "isCorrect": false,
+                            "queuePos": 2
+                        },
+                        {
+                            "answerText": "3!",
+                            "isCorrect": false,
+                            "queuePos": 3
+                        },
+                        {
+                            "answerText": "4!",
+                            "isCorrect": false,
+                            "queuePos": 4
+                        }
+                    ]
+                },
+                {
+                    "type": "TF",
+                    "questionText": "Ist dieser Satz korrekt? Ja, er ist richtig.",
+                    "answers": [
+                        {
+                            "answerText": "Richtig.",
+                            "isCorrect": true,
+                            "queuePos": 0
+                        },
+                        {
+                            "answerText": "Falsch.",
+                            "isCorrect": false,
+                            "queuePos": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "outro": "Hier steht der Abspann-Text.</b>"
+}
