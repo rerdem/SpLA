@@ -83,6 +83,7 @@ public class TownManager : MonoBehaviour {
 		vocabButtonPrompt.SetActive(true);
 		if (GameManager.gm.tutorial == true) {
 			tutorialPanel.SetActive(true);
+			GameManager.gm.inTutorial = true;
 		}
 
 		//show title card
@@ -102,16 +103,17 @@ public class TownManager : MonoBehaviour {
 			grammarInitiated = true;
 		}
 
-		if (!grammarPanel.activeInHierarchy) {
-			grammarPanel.SetActive(true);
-
-			GameManager.gm.inExercise = true;
-			Cursor.visible = true;
-		}
-		else {
-			grammarPanel.SetActive(false);
-			GameManager.gm.inExercise = false;
-			Cursor.visible = false;
+		if ((!GameManager.gm.inExercise) && (!GameManager.gm.inVocab) && (!GameManager.gm.inTutorial)) {
+			if (!grammarPanel.activeInHierarchy) {
+				grammarPanel.SetActive(true);
+				GameManager.gm.inGrammar = true;
+				Cursor.visible = true;
+			}
+			else {
+				grammarPanel.SetActive(false);
+				GameManager.gm.inGrammar = false;
+				Cursor.visible = false;
+			}
 		}
 	}
 
@@ -133,17 +135,17 @@ public class TownManager : MonoBehaviour {
 			vocabularyInitiated = true;
 		}
 
-		if (!vocabPanel.activeInHierarchy) {
-			
-			vocabPanel.SetActive(true);
-
-			GameManager.gm.inExercise = true;
-			Cursor.visible = true;
-		}
-		else {
-			vocabPanel.SetActive(false);
-			GameManager.gm.inExercise = false;
-			Cursor.visible = false;
+		if ((!GameManager.gm.inExercise) && (!GameManager.gm.inGrammar) && (!GameManager.gm.inTutorial)) {
+			if (!vocabPanel.activeInHierarchy) {
+				vocabPanel.SetActive(true);
+				GameManager.gm.inVocab = true;
+				Cursor.visible = true;
+			}
+			else {
+				vocabPanel.SetActive(false);
+				GameManager.gm.inVocab = false;
+				Cursor.visible = false;
+			}
 		}
 	}
 
@@ -152,42 +154,44 @@ public class TownManager : MonoBehaviour {
 	/// </summary>
 	/// <param name="askedNPC">The NPC's GameObject the player collided with.</param>
 	public void triggerExercise(GameObject askedNPC) {
-		currentNPCindex = getNPCindex(askedNPC);
+		if ((!GameManager.gm.inGrammar) && (!GameManager.gm.inVocab) && (!GameManager.gm.inTutorial)) {
+			currentNPCindex = getNPCindex(askedNPC);
 
-		switch (exercises[currentNPCindex].type) {
-			case "MC":
-				mcQuestion.text = exercises[currentNPCindex].questionText;
-				shuffleAnswers(exercises[currentNPCindex].answers);
-				for (int i = 0; i < mcButtons.Length; i++) {
-					mcButtons[i].GetComponent<TFButton>().setup(exercises[currentNPCindex].answers[i].answerText, exercises[currentNPCindex].answers[i].isCorrect);
-				}
-				mcPanel.SetActive(true);
-				break;
-			case "MP":
-				mpQuestion.text = exercises[currentNPCindex].questionText;
-				shuffleAnswers(exercises[currentNPCindex].answers);
-				for (int i = 0; i < mpButtons.Length; i++) {
-					mpButtons[i].GetComponent<PriorityButton>().setup(exercises[currentNPCindex].answers[i].answerText, exercises[currentNPCindex].answers[i].queuePos);
-				}
-				mpPanel.SetActive(true);
-				currentAnswerPriority = 0;
-				break;
-			case "TF":
-				tfQuestion.text = exercises[currentNPCindex].questionText;
-				for (int i = 0; i < tfButtons.Length; i++) {
-					tfButtons[i].GetComponent<TFButton>().setup(exercises[currentNPCindex].answers[i].answerText, exercises[currentNPCindex].answers[i].isCorrect);
-				}
-				tfPanel.SetActive(true);
-				break;
-			default:
-				break;
+			switch (exercises[currentNPCindex].type) {
+				case "MC":
+					mcQuestion.text = exercises[currentNPCindex].questionText;
+					shuffleAnswers(exercises[currentNPCindex].answers);
+					for (int i = 0; i < mcButtons.Length; i++) {
+						mcButtons[i].GetComponent<TFButton>().setup(exercises[currentNPCindex].answers[i].answerText, exercises[currentNPCindex].answers[i].isCorrect);
+					}
+					mcPanel.SetActive(true);
+					break;
+				case "MP":
+					mpQuestion.text = exercises[currentNPCindex].questionText;
+					shuffleAnswers(exercises[currentNPCindex].answers);
+					for (int i = 0; i < mpButtons.Length; i++) {
+						mpButtons[i].GetComponent<PriorityButton>().setup(exercises[currentNPCindex].answers[i].answerText, exercises[currentNPCindex].answers[i].queuePos);
+					}
+					mpPanel.SetActive(true);
+					currentAnswerPriority = 0;
+					break;
+				case "TF":
+					tfQuestion.text = exercises[currentNPCindex].questionText;
+					for (int i = 0; i < tfButtons.Length; i++) {
+						tfButtons[i].GetComponent<TFButton>().setup(exercises[currentNPCindex].answers[i].answerText, exercises[currentNPCindex].answers[i].isCorrect);
+					}
+					tfPanel.SetActive(true);
+					break;
+				default:
+					break;
+			}
+
+			//deactivate movement
+			GameManager.gm.inExercise = true;
+
+			//show cursor
+			Cursor.visible = true;
 		}
-
-		//deactivate movement
-		GameManager.gm.inExercise = true;
-
-		//show cursor
-		Cursor.visible = true;
 	}
 
 	/// <summary>
@@ -323,6 +327,7 @@ public class TownManager : MonoBehaviour {
 		}
 		fadedUI = true;
 		GameManager.gm.tutorial = false;
+		GameManager.gm.inTutorial = false;
 	}
 
 	/// <summary>

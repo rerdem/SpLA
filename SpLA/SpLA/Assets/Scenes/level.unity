@@ -423,7 +423,7 @@ MonoBehaviour:
   decorationChance: 0.5
   cloudChance: 0.5
   tileChange: 0.7
-  enemyDensity: 0.1
+  enemyDensity: 0.05
 --- !u!1 &1602102748
 GameObject:
   m_ObjectHideFlags: 0

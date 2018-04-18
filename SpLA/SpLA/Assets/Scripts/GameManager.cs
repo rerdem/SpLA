@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour {
 	public static GameManager gm = null;
 
 	public DataController dc;
-	public bool inExercise = false;
 	public bool tutorial = true;
+	public bool inTutorial = false;
+	public bool inExercise = false;
+	public bool inGrammar = false;
+	public bool inVocab = false;
 	public bool introPlayed = false;
 	public bool playOutro = false;
 	public bool playMusic = true;
@@ -28,6 +31,9 @@ public class GameManager : MonoBehaviour {
 
 		//set screen settings
 		Screen.SetResolution(1024, 768, false);
+
+		//set Cursor settings
+		Cursor.visible = true;
 	}
 
 	void Update () {

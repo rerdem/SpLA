@@ -34,7 +34,7 @@ public class PlayerController2D : MonoBehaviour {
 		animator.SetBool("playerGrounded", grounded);
 
 		//horizontal movement
-		if (!GameManager.gm.inExercise) {
+		if ((!GameManager.gm.inExercise) && (!GameManager.gm.inGrammar) && (!GameManager.gm.inVocab)) {
 			float move = Input.GetAxis("Horizontal");
 			rigid.velocity = new Vector2(move * maxSpeed, rigid.velocity.y);
 
@@ -58,7 +58,7 @@ public class PlayerController2D : MonoBehaviour {
 	}
 
 	void Update() {
-		if (!GameManager.gm.inExercise) {
+		if ((!GameManager.gm.inExercise) && (!GameManager.gm.inGrammar) && (!GameManager.gm.inVocab)) {
 			//jump
 			if ((grounded) && ((Input.GetKeyDown(KeyCode.UpArrow)) || (Input.GetKeyDown(KeyCode.W)))) {
 				animator.SetBool("playerGrounded", false);
