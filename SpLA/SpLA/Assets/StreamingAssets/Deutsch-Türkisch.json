@@ -179,7 +179,7 @@
             "exercises": [
                 {
                     "type": "MC",
-                    "questionText": "Finde die richtige Antwort: Bu hanımlar turist mi?",
+                    "questionText": "Finde die richtige Antwort: Günaydın, bu hanımlar turist mi?",
                     "answers": [
                         {
                             "answerText": "Bu turist.",
@@ -187,12 +187,12 @@
                             "queuePos": 0
                         },
                         {
-                            "answerText": "Evet, bu hanım turist.",
+                            "answerText": "İyi geceler! Evet, bu hanım turist.",
                             "isCorrect": false,
                             "queuePos": 0
                         },
                         {
-                            "answerText": "Evet, bunlar turist.",
+                            "answerText": "Günaydın. Evet, bunlar turist.",
                             "isCorrect": true,
                             "queuePos": 0
                         },

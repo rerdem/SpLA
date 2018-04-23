@@ -1,10 +1,10 @@
 {
-    "teachinglanguage": "Test",
-    "learninglanguage": "Test",
-    "intro": "Hier steht der Intro-Text.",
+    "teachinglanguage": "Beispiel1",
+    "learninglanguage": "Beispiel2",
+    "intro": "Hier steht der beispielhafte Intro-Text.",
     "allLectures": [
         {
-            "title": "Lektion 1: Test-Lektion 1",
+            "title": "Lektion 1: Beispiel-Lektion 1",
             "grammar": "Dies ist ein Beispieltext.\n\nEs gibt neue Absätze, <b>fetten Text</b> und <i>kursiven Text</i>.",
             "vocabulary": [
                 {
@@ -92,7 +92,7 @@
             ]
         },
         {
-            "title": "Lektion 2: Test-Lektion 2",
+            "title": "Lektion 2: Beispiel-Lektion 2",
             "grammar": "Dies ist ein Beispieltext.\n\nEs gibt neue Absätze, <b>fetten Text</b> und <i>kursiven Text</i>.",
             "vocabulary": [
                 {
@@ -180,5 +180,5 @@
             ]
         }
     ],
-    "outro": "Hier steht der Abspann-Text.</b>"
+    "outro": "Hier steht der beispielhafte Abspann-Text.</b>"
 }
